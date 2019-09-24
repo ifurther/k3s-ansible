@@ -13,6 +13,8 @@
   become: yes
   roles:
     - { role: k3s/master }
+  tags:
+    - master
 
 - hosts: node
 #  gather_facts: yes
@@ -20,3 +22,5 @@
   roles:
     - { role: cp }
     - { role: k3s/node }
+  tags:
+    - node 
