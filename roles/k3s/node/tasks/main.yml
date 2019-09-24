@@ -14,3 +14,25 @@
     daemon_reload: yes
     state: restarted
     enabled: yes
+
+- name: Enable Firewalld port 6443
+  firewalld:
+    zone: work
+    port: 6443/tcp
+    permanent: yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat'
+
+- name: Enable Firewalld port 8472
+  firewalld:
+    zone: work
+    port: 8472/tcp
+    permanent: yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat'
+
+- name: Enable Firewalld port
+  firewalld:
+    zone: internal
+    interface: cni0
+    permanent: yes
+    state: enabled
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat'
