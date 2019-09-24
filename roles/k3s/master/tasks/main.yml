@@ -24,6 +24,8 @@
   stat:
     path: /var/lib/rancher/k3s/server
   register: p
+  tags:
+   - storetoken
 
 - name: Change file access node-token
   file:
