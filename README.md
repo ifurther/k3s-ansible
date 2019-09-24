@@ -1,3 +1,5 @@
+# My Cluster only one can download, so I add cp task to copy file to another node.
+
 # Build a Kubernetes cluster using k3s via Ansible.
 
 > This repository is now part of https://github.com/rancher/k3s official repo in contrib/ansible directory.
